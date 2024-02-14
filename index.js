@@ -9,23 +9,10 @@ app.get('/ss', async (req, res) => {
     return res.status(400).json({ error: 'URL parameter is required' });
   }
 
-  const options = {
-    method: 'GET',
-    url: 'https://web-capture2.p.rapidapi.com/image',
-    params: {
-      url: url,
-      height: '780',
-      width: '1024'
-    },
-    headers: {
-      'X-RapidAPI-Key': 'b38444b5b7mshc6ce6bcd5c9e446p154fa1jsn7bbcfb025b3b',
-      'X-RapidAPI-Host': 'web-capture2.p.rapidapi.com'
-    },
-    responseType: 'stream' // specify response type as stream to directly pipe it to the client
-  };
+  const thumbioUrl = `https://image.thum.io/get/width/1920/crop/400/fullpage/noanimate/${url}`;
 
   try {
-    const response = await axios.request(options);
+    const response = await axios.get(thumbioUrl, { responseType: 'stream' });
     // Pipe the image stream directly to the response
     response.data.pipe(res);
   } catch (error) {
