@@ -11,7 +11,7 @@ app.get('/ss', (req, res) => {
     return res.status(400).json({ error: 'URL parameter is required' });
   }
 
-  const screenshotAPIUrl = `https://api.screenshotone.com/take?access_key=BEVtsJFIxH1Q4w&url=${encodeURIComponent(url)}&viewport_width=1920&viewport_height=1080&device_scale_factor=1&image_quality=80&format=jpg&block_ads=true&block_cookie_banners=true&full_page=false&block_trackers=true&block_banners_by_heuristics=false&delay=0&timeout=60`;
+  const screenshotAPIUrl = `https://api.screenshotone.com/take?access_key=zMccWr1hFTRAyg&url=${encodeURIComponent(url)}&viewport_width=1920&viewport_height=1080&device_scale_factor=1&image_quality=80&format=jpg&block_ads=true&block_cookie_banners=true&full_page=false&block_trackers=true&block_banners_by_heuristics=false&delay=0&timeout=60`;
 
   axios.get(screenshotAPIUrl, { responseType: 'arraybuffer' })
     .then(response => {
