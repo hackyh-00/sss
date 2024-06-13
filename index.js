@@ -14,8 +14,8 @@ app.get('/ss', async (req, res) => {
     url: 'https://web-capture2.p.rapidapi.com/image',
     params: {
       url: url,
-      height: '780',
-      width: '1024'
+      height: '1920',
+      width: '1080'
     },
     headers: {
       'X-RapidAPI-Key': 'b38444b5b7mshc6ce6bcd5c9e446p154fa1jsn7bbcfb025b3b',
